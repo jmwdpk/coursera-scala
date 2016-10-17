@@ -15,8 +15,8 @@ object Main {
    * Exercise 1
    */
   def pascal(c: Int, r: Int): Int = (c,r) match {
-     case (0, _) => 1
-     case (c, r)  if (c==r) => 1
+     case (0, _) => 1 //_ means ignoring parameter? here left shouder are all 1s
+     case (c, r)  if (c==r) => 1 //here right shouder are all 1s
      case (c,r) => pascal(c,r-1)+pascal(c-1,r-1)
   }
 
