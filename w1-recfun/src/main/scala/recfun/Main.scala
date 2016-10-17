@@ -25,12 +25,12 @@ object Main {
    */
   def balance(chars: List[Char], count:Int = 0): Boolean = (chars, count) match {
      case (cs, 0)  if cs.isEmpty => true
-     case (cs, _)  if cs.isEmpty => false
+     case (cs, _)  if cs.isEmpty => false //_ means else?
      case (cs, c)  => cs.head match {
         case '(' => balance(cs.tail, c+1)
         case ')' if c > 0 => balance(cs.tail, c-1)
-        case ')' => false
-        case _  => balance(cs.tail, c)
+        case ')' => false//head start with ) then false
+        case _  => balance(cs.tail, c)//non() stay the same
      }
   }
 
